@@ -1,0 +1,47 @@
+@use "../../styles/colors.scss" as *;
+
+.button {
+  cursor: pointer;
+  border: 0;
+  width: 100%;
+  border-radius: 24px;
+  transition: background-color ease-in-out 0.2s;
+  font-weight: 700;
+
+  &.small {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  &.big {
+    font-size: 15px;
+    padding: 14px 0;
+  }
+
+  &.primary {
+    color: $color-white;
+    background-color: $color-purple;
+
+    &:hover {
+      background-color: $color-melrose;
+    }
+  }
+
+  &.secondary {
+    color: $color-purple;
+    background-color: $color-purple-light;
+
+    &:hover {
+      background-color: $color-purple-lighter;
+    }
+  }
+
+  &.destructive {
+    color: $color-white;
+    background-color: $color-mandy;
+
+    &:hover {
+      background-color: $color-mona-lisa;
+    }
+  }
+}
