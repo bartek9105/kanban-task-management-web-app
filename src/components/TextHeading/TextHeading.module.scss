@@ -1,0 +1,29 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+
+.heading {
+  color: $color-black;
+  font-weight: $font-weight-bold;
+}
+
+.headingElementLevel1 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.headingElementLevel2 {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.headingElementLevel3 {
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.headingElementLevel4 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2.4px;
+  color: $color-regent-gray;
+}

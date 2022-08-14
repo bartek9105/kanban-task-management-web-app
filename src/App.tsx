@@ -1,11 +1,9 @@
-import Button from "./components/Button";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Button variant="primary" size="lg">
-        Some button
-      </Button>
+      <Navbar />
     </div>
   );
 }

@@ -1,0 +1,7 @@
+@use "../../styles/colors.scss" as *;
+
+.container {
+  padding: 16px 20px;
+  height: 64px;
+  background-color: $color-white;
+}

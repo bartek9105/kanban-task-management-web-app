@@ -1,0 +1,17 @@
+@use "../../styles/colors.scss" as *;
+@use "../../styles/fonts.scss" as *;
+
+.textBody {
+  color: $color-charade;
+}
+
+.textBodyMedium {
+  font-size: 13px;
+  line-height: 23px;
+}
+
+.textBodySmall {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: $font-weight-bold;
+}
