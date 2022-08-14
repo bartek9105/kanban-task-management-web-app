@@ -8,17 +8,17 @@
   transition: background-color ease-in-out 0.2s;
   font-weight: 700;
 
-  &.small {
+  &.buttonSmall {
     padding: 8px 0;
     font-size: 13px;
   }
 
-  &.big {
+  &.buttonBig {
     font-size: 15px;
     padding: 14px 0;
   }
 
-  &.primary {
+  &.buttonPrimary {
     color: $color-white;
     background-color: $color-purple;
 
@@ -27,7 +27,7 @@
     }
   }
 
-  &.secondary {
+  &.buttonSecondary {
     color: $color-purple;
     background-color: $color-purple-light;
 
@@ -36,7 +36,7 @@
     }
   }
 
-  &.destructive {
+  &.buttonDestructive {
     color: $color-white;
     background-color: $color-mandy;
 

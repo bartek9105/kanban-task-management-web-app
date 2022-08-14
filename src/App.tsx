@@ -3,7 +3,7 @@ import Button from "./components/Button";
 function App() {
   return (
     <div className="App">
-      <Button variant="destructive" size="big">
+      <Button variant="primary" size="lg">
         Some button
       </Button>
     </div>
