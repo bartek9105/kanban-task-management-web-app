@@ -1,0 +1,13 @@
+@use "../../../styles/colors.scss" as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $color-link-water;
+  border-radius: 50%;
+  background-color: $color-white;
+}

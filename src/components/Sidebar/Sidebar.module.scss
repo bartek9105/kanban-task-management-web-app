@@ -1,0 +1,83 @@
+@use "../../styles/colors.scss" as *;
+@use "../../styles/responsive.scss" as *;
+
+.overlay {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebarHint {
+  width: 24px;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  border-right: 1px solid $color-link-water;
+  background-color: $color-white;
+}
+
+.arrow {
+  color: $color-regent-gray;
+}
+
+.arrowRight {
+  transform: rotate(-90deg);
+}
+
+.arrowLeft {
+  transform: rotate(90deg);
+}
+
+.toggleOpen {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+.toggleClosed {
+  position: absolute;
+  top: 0;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 264px;
+  background-color: $color-white;
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid $color-link-water;
+  @include for-tablet-up {
+    top: 0;
+    padding-top: 16px;
+  }
+  @include for-desktop {
+    width: 300px;
+  }
+}
+
+.logo {
+  display: none;
+  @include for-tablet-up {
+    display: unset;
+    padding-left: 24px;
+  }
+}
+
+.heading {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  padding-left: 24px;
+  color: $color-regent-gray;
+  @include for-tablet-up {
+    margin-top: 40px;
+  }
+}

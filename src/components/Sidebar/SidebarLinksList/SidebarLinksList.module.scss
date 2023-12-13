@@ -1,0 +1,29 @@
+@use "../../../styles/colors.scss" as *;
+
+.listItem {
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+  column-gap: 12px;
+  color: $color-regent-gray;
+  transition: color ease-in-out 0.2s;
+  cursor: pointer;
+  &:hover {
+    color: $color-purple;
+  }
+}
+
+.activeListItem {
+  background-color: $color-purple;
+  margin-right: 24px;
+  border-radius: 0 100px 100px 0;
+  color: $color-white;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.newBoardListItem {
+  color: $color-purple;
+}

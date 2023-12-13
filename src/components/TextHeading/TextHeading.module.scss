@@ -2,7 +2,6 @@
 @use "../../styles/fonts" as *;
 
 .heading {
-  color: $color-black;
   font-weight: $font-weight-bold;
 }
 
@@ -25,5 +24,4 @@
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 2.4px;
-  color: $color-regent-gray;
 }
