@@ -1,0 +1,19 @@
+@use "../../styles/colors.scss" as *;
+
+.container {
+  display: grid;
+  row-gap: 8px;
+  padding: 24px 16px;
+  background-color: $color-white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1);
+  max-width: 280px;
+}
+
+.heading {
+  color: $color-black;
+}
+
+.hint {
+  color: $color-regent-gray;
+}

@@ -6,15 +6,20 @@ type Variant = "sm" | "md";
 
 type TextBodyProps = PropsWithChildren<{
   variant: Variant;
+  className?: string;
 }>;
 
-const TextBody = ({ children, variant }: TextBodyProps) => {
+const TextBody = ({ children, variant, className }: TextBodyProps) => {
   return (
     <p
-      className={cn(styles.textBody, {
-        [styles.textBodySmall]: variant === "sm",
-        [styles.textBodyMedium]: variant === "md",
-      })}
+      className={cn(
+        styles.textBody,
+        {
+          [styles.textBodySmall]: variant === "sm",
+          [styles.textBodyMedium]: variant === "md",
+        },
+        className
+      )}
     >
       {children}
     </p>

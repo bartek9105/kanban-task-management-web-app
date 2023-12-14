@@ -1,13 +1,12 @@
 import Navbar from "./components/Navbar";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import styles from "./App.module.scss";
+import DndListElement from "./components/DnDListElement";
 
 const ITEMS = Array.from({ length: 10 }, (v, k) => k).map((k) => ({
   id: `item-${k}`,
   content: `item ${k}`,
 }));
-
-console.log(ITEMS);
 
 function App() {
   return (
@@ -17,7 +16,11 @@ function App() {
         <DragDropContext onDragEnd={() => {}}>
           <Droppable droppableId="droppable">
             {(provided) => (
-              <ul {...provided.droppableProps} ref={provided.innerRef}>
+              <ul
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                className={styles.list}
+              >
                 {ITEMS.map((item, index) => (
                   <Draggable
                     key={item.id}
@@ -25,12 +28,12 @@ function App() {
                     index={index}
                   >
                     {(provided) => (
-                      <li
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                      >
-                        {item.content}
+                      <li className={styles.listItem}>
+                        <DndListElement
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        />
                       </li>
                     )}
                   </Draggable>
