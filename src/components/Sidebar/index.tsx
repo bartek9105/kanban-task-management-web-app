@@ -7,16 +7,7 @@ import { ReactComponent as Logo } from "../../icons/logo-full.svg";
 import { ReactComponent as ArrowDown } from "../../icons/arrow-down.svg";
 import { SidebarToggle } from "./SidebarToggle";
 import cn from "classnames";
-
-const BOARDS_MOCK = [
-  "Platform Launch",
-  "Marketing Plan",
-  "Roadmap",
-  "Marketing Plan",
-  "Roadmap",
-  "Marketing Plan",
-  "Roadmap",
-];
+import { useGetBoards } from "../../api/boards";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -24,6 +15,8 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, toggleIsOpen }: SidebarProps) => {
+  const { data: boards } = useGetBoards();
+
   return (
     <>
       {!isOpen && (
@@ -49,7 +42,7 @@ const Sidebar = ({ isOpen, toggleIsOpen }: SidebarProps) => {
             >
               <Logo className={styles.logo} />
               <TextHeading as="h4" className={styles.heading}>
-                ALL BOARDS ({BOARDS_MOCK.length})
+                ALL BOARDS ({boards?.length || 0})
                 <SidebarToggle
                   className={styles.toggleClosed}
                   onClick={toggleIsOpen}
@@ -58,7 +51,7 @@ const Sidebar = ({ isOpen, toggleIsOpen }: SidebarProps) => {
                   }
                 />
               </TextHeading>
-              <SidebarLinksList links={BOARDS_MOCK} />
+              {boards && <SidebarLinksList links={boards} />}
             </motion.nav>
           </motion.div>
         )}

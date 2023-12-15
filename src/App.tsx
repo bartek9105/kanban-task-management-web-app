@@ -1,5 +1,8 @@
 import { MainLayout } from "./components/MainLayout";
 import { DnDBoard } from "./components/DnDBoard";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 const ITEMS = Array.from({ length: 10 }, (v, k) => k).map((k) => ({
   id: `item-${Math.random()}`,
@@ -17,9 +20,11 @@ const columns = [ITEMS, ITEMS_2];
 
 function App() {
   return (
-    <MainLayout>
-      <DnDBoard columns={columns} />
-    </MainLayout>
+    <QueryClientProvider client={queryClient}>
+      <MainLayout>
+        <DnDBoard columns={columns} />
+      </MainLayout>
+    </QueryClientProvider>
   );
 }
 

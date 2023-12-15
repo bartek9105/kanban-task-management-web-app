@@ -16,33 +16,31 @@ export const DnDBoard = ({ columns }: DnDBoardProps) => (
       {columns.map((column, index) => (
         <Droppable key={index} droppableId={`${index}`}>
           {(provided) => (
-            <>
-              <ul
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-                className={styles.list}
-              >
-                {column.map((item, index) => (
-                  <Draggable
-                    key={item.id}
-                    draggableId={`${item.id}`}
-                    index={index}
-                  >
-                    {(provided) => (
-                      <li className={styles.listItem}>
-                        <DndListElement
-                          title={item.content}
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                        />
-                      </li>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </ul>
-            </>
+            <ul
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+              className={styles.list}
+            >
+              {column.map((item, index) => (
+                <Draggable
+                  key={item.id}
+                  draggableId={`${item.id}`}
+                  index={index}
+                >
+                  {(provided) => (
+                    <li className={styles.listItem}>
+                      <DndListElement
+                        title={item.content}
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      />
+                    </li>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </ul>
           )}
         </Droppable>
       ))}

@@ -5,9 +5,10 @@ import { ReactComponent as PlusIcon } from "../../../icons/plus.svg";
 import TextHeading from "../../TextHeading";
 import { staggerChildrenAnimation } from "../../../animations";
 import { motion } from "framer-motion";
+import { Board } from "../../../api/boards/models";
 
 interface SidebarLinksListProps {
-  links: string[];
+  links: Board[];
 }
 
 const SidebarLinksList = ({ links }: SidebarLinksListProps) => {
@@ -17,16 +18,16 @@ const SidebarLinksList = ({ links }: SidebarLinksListProps) => {
       initial="hidden"
       animate="show"
     >
-      {links.map((board, index) => (
+      {links.map(({ name, id }) => (
         <motion.li
           variants={staggerChildrenAnimation.item}
           className={cn(styles.listItem, {
-            [styles.activeListItem]: index === 1,
+            [styles.activeListItem]: id === "1",
           })}
-          key={index}
+          key={id}
         >
           <BoardIcon />
-          <TextHeading as="h3">{board}</TextHeading>
+          <TextHeading as="h3">{name}</TextHeading>
         </motion.li>
       ))}
       <li
